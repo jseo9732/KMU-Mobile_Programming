@@ -49,24 +49,23 @@
    #### 2-2. 비밀번호 유효성 검사 (4~8글자 제한, 숫자와 특수문자 필수 포함)
    <img src="/images/Screenshot_pw_length.png" title="person_info" alt="person_info" width="250px"></img>
    <img src="/images/Screenshot_pw_vaild.png" title="person_info" alt="person_info" width="250px"></img><br/>
+   4~8글자 제한과 숫자와 특수문자 필수 포함이 아니면 경고 표시
    #### 2-3. 개인정보 수집 동의
-   <img src="/images/Screenshot_nop.png" title="person_info" alt="person_info" width="250px"></img>
+   <img src="/images/Screenshot_nop.png" title="person_info" alt="person_info" width="250px"></img><br/>
    개인정보 수집 비동의 시 경고창 표시
    
 ### 3. 세번째 화면
    #### 3-1. 상품 이미지 5개 이상 표시
-   <img src="/images/Screenshot_product.png" title="person_info" alt="person_info" width="250px"></img>
+   <img src="/images/Screenshot_product.png" title="person_info" alt="person_info" width="250px"></img><br/>
+   ListView를 이용하여 5개의 상품 표시
 
    #### 3-2. 회원인 경우는 가입한 회원 정보 표시
-   <img src="/images/Screenshot_userInfo.png" title="person_info" alt="person_info" width="250px"></img>
+   <img src="/images/Screenshot_userInfo.png" title="person_info" alt="person_info" width="250px"></img><br/>
 
    #### 3-3. 비회원인 경우 회원가입 여부 묻기
-   <img src="/images/Screenshot_onLogin.png" title="person_info" alt="person_info" width="250px"></img>
-
-   
-
-
-
+   <img src="/images/Screenshot_onLogin.png" title="person_info" alt="person_info" width="250px"></img><br/>
+   "예" 클릭 시 회원 가입 페이지로 이동
+   "아니오" 클릭 시 로그인 페이지로 이동
 
 ## 개발 환경
 - Android Studio @2021.2.1
