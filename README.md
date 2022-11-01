@@ -29,34 +29,40 @@
   ImageView, ImageButton 등
 
 ## 기능 소개
-1. 첫번째 화면 <br/>
-  1-1. 앱 접속 페이지, 회원 ID/비밀번호(EditView), 로그인/회원가입(Button) <br/>
-       <img src="/images/Screenshot_login.png" title="person_info" alt="person_info" width="250px"></img> <br/>
-  1-2. 첫번째 화면 초기화시에 기존에 저장된 개인정보 읽어 오기 <br/>
-       <img src="/images/Screenshot_20221101_212049.png" title="person_info" alt="person_info" width="250px"></img> <br/>
-       마지막으로 로그인한 아이디를 자동으로 입력<br/>
-  1-3. ID, 비밀번호 입력 시 기존에 가입한 회원 ID, 비밀번호 체크 오류 시 에러 메시지 출력<br/>
-       <img src="/images/Screenshot_id_fault.png" title="person_info" alt="person_info" width="250px"></img><br/>
-       아이디 오류 시 경고 메세지<br/>
-       <img src="/images/Screenshot_pw_fault.png" title="person_info" alt="person_info" width="250px"></img><br/>
-       비밀번호 오류 시 경고 메세지<br/>
-2. 두번째 화면<br/>
-   <img src="/images/Screenshot_signup.png" title="person_info" alt="person_info" width="250px"></img>
-   2-1. 아이디 중복 검사
-    <img src="/images/Screenshot_id_check.png" title="person_info" alt="person_info" width="250px"></img>
-    <img src="/images/Screenshot_id_dup.png" title="person_info" alt="person_info" width="250px"></img><br/>
-    사용 중인 아이디와 사용 가능한 아이디 중복 확인 시 경고 표시
-   2-2. 비밀번호 유효성 검사 (4~8글자 제한, 숫자와 특수문자 필수 포함)
-      <img src="/images/Screenshot_pw_length.png" title="person_info" alt="person_info" width="250px"></img>
-      <img src="/images/Screenshot_pw_vaild.png" title="person_info" alt="person_info" width="250px"></img><br/>
-   2-3. 개인정보 수집 동의
-        <img src="/images/Screenshot_nop.png" title="person_info" alt="person_info" width="250px"></img>
-        개인정보 수집 비동의 시 경고창 표시
+### 1. 첫번째 화면
+  #### 1-1. 앱 접속 페이지, 회원 ID/비밀번호(EditView), 로그인/회원가입(Button)
+  <img src="/images/Screenshot_login.png" title="person_info" alt="person_info" width="250px"></img> <br/>
+  #### 1-2. 첫번째 화면 초기화시에 기존에 저장된 개인정보 읽어 오기
+  <img src="/images/Screenshot_20221101_212049.png" title="person_info" alt="person_info" width="250px"></img> <br/>
+  마지막으로 로그인한 아이디를 자동으로 입력<br/>
+  #### 1-3. ID, 비밀번호 입력 시 기존에 가입한 회원 ID, 비밀번호 체크 오류 시 에러 메시지 출력
+  <img src="/images/Screenshot_id_fault.png" title="person_info" alt="person_info" width="250px"></img><br/>
+  아이디 오류 시 경고 메세지<br/>
+  <img src="/images/Screenshot_pw_fault.png" title="person_info" alt="person_info" width="250px"></img><br/>
+  비밀번호 오류 시 경고 메세지<br/>
+### 2. 두번째 화면
+<img src="/images/Screenshot_signup.png" title="person_info" alt="person_info" width="250px"></img>
+   #### 2-1. 아이디 중복 검사
+   <img src="/images/Screenshot_id_check.png" title="person_info" alt="person_info" width="250px"></img>
+   <img src="/images/Screenshot_id_dup.png" title="person_info" alt="person_info" width="250px"></img><br/>
+   사용 중인 아이디와 사용 가능한 아이디 중복 확인 시 경고 표시
+   #### 2-2. 비밀번호 유효성 검사 (4~8글자 제한, 숫자와 특수문자 필수 포함)
+   <img src="/images/Screenshot_pw_length.png" title="person_info" alt="person_info" width="250px"></img>
+   <img src="/images/Screenshot_pw_vaild.png" title="person_info" alt="person_info" width="250px"></img><br/>
+   #### 2-3. 개인정보 수집 동의
+   <img src="/images/Screenshot_nop.png" title="person_info" alt="person_info" width="250px"></img>
+   개인정보 수집 비동의 시 경고창 표시
    
-3. 세번째 화면<br/>
-   3-1.
-   3-2.
-   3-3.
+### 3. 세번째 화면
+   #### 3-1. 상품 이미지 5개 이상 표시
+   <img src="/images/Screenshot_product.png" title="person_info" alt="person_info" width="250px"></img>
+
+   #### 3-2. 회원인 경우는 가입한 회원 정보 표시
+   <img src="/images/Screenshot_userInfo.png" title="person_info" alt="person_info" width="250px"></img>
+
+   #### 3-3. 비회원인 경우 회원가입 여부 묻기
+   <img src="/images/Screenshot_onLogin.png" title="person_info" alt="person_info" width="250px"></img>
+
    
 
 
