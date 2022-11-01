@@ -7,13 +7,10 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.Toast;
 
-import java.text.BreakIterator;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -44,6 +41,14 @@ public class SignupActivity extends AppCompatActivity {
         }
     };
 
+    static final String SEP = "@#!~";
+    void addMember(String id, String pw, String name, String phone, String address, Boolean isAgree, SharedPreferences.Editor editor) {
+        String key = id;
+        String value = id + SEP + pw + SEP + name + SEP + phone + SEP + address + SEP +isAgree;
+        editor.putString(key, value);
+        editor.apply();
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,13 +65,15 @@ public class SignupActivity extends AppCompatActivity {
 
         SharedPreferences prefs = getSharedPreferences("person_info", Activity.MODE_PRIVATE);
         SharedPreferences.Editor editor = prefs.edit();
-        String prefsId = prefs.getString("id", "");
+
         mDupButton = (Button) findViewById(R.id.signup_id_isDup);
         mDupButton.setOnClickListener(v -> {
+            String prefsUser = prefs.getString(mEditId.getText().toString(), "");
+            String[] saveData = prefsUser.split(SEP);
             if (mEditId.getText().toString().isEmpty()) {
                 Toast.makeText(getApplicationContext(), "아이디를 입력해주세요", Toast.LENGTH_SHORT).show();
                 isIdDup = false;
-            } else if(prefsId.equals(mEditId.getText().toString())) {
+            } else if(saveData[0].equals(mEditId.getText().toString())) {
                 Toast.makeText(getApplicationContext(), "이미 사용 중인 아이디입니다.", Toast.LENGTH_SHORT).show();
                 isIdDup = false;
             } else {
@@ -83,13 +90,8 @@ public class SignupActivity extends AppCompatActivity {
                 if (mEditPw.getText().toString().length() >= 4 && mEditPw.getText().toString().length() < 9) {
                     if (check_validation(mEditPw.getText().toString())) {
                         if (mAgreeAccept.isChecked()) {
-                            editor.putString("id", mEditId.getText().toString());
-                            editor.putString("pw", mEditPw.getText().toString());
-                            editor.putString("name", mEditName.getText().toString());
-                            editor.putString("phone", mEditPhone.getText().toString());
-                            editor.putString("address", mEditAddress.getText().toString());
-                            editor.putBoolean("isAgree",true);
-                            editor.commit();
+                                addMember(mEditId.getText().toString(), mEditPw.getText().toString(), mEditName.getText().toString(),
+                                        mEditPhone.getText().toString(), mEditAddress.getText().toString(), true, editor);
                             Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
                             startActivity(intent);
                         } else {
