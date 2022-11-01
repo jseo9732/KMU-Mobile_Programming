@@ -1,5 +1,7 @@
 package com.example.homework;
 
+import static com.example.homework.SignupActivity.SEP;
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
@@ -57,7 +59,14 @@ public class ProductActivity extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(isChecked) {
                     if(isLogin) {
-                        Toast.makeText(getApplicationContext(), "로그인함", Toast.LENGTH_SHORT).show();
+                        String userId = login_prefs.getString("loginId", "");
+                        String logUserUser = prefs.getString(userId, "");
+                        String[] saveData = logUserUser.split(SEP);
+                        AlertDialog.Builder builderUser = new AlertDialog.Builder(ProductActivity.this);
+                        builderUser.setTitle("회원 정보 조회");
+                        builderUser.setMessage("ID: " + saveData[0] + "\n" + "이름: " + saveData[2] + "\n" + "전화번호: " + saveData[3] + "\n" + "주소: " + saveData[4]);
+                        builderUser.setPositiveButton("확인", null);
+                        builderUser.create().show();
                     } else {
                         AlertDialog.Builder builder = new AlertDialog.Builder(ProductActivity.this);
                         builder.setTitle("비로그인 상태입니다.");
