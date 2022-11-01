@@ -39,16 +39,15 @@
   프레퍼런스를 통해 login_info.xml 파일에서 최근 로그인한 아이디를 가져와 입력해준다.
 
   #### 1-3. ID, 비밀번호 입력 시 기존에 가입한 회원 ID, 비밀번호 체크 오류 시 에러 메시지 출력
-  <img src="/images/Screenshot_id_fault.png" title="person_info" alt="person_info" width="250px"></img><br/>
-  아이디 오류 시 경고 메세지<br/>
+  <img src="/images/Screenshot_id_fault.png" title="person_info" alt="person_info" width="250px"></img>
   <img src="/images/Screenshot_pw_fault.png" title="person_info" alt="person_info" width="250px"></img><br/>
-  비밀번호 오류 시 경고 메세지<br/>
+  (왼)아이디 오류 시 경고 메세지 (오)비밀번호 오류 시 경고 메세지<br/>
   <img src="/images/2022-11-01_9.54.18.png" title="person_info" alt="person_info" width="250px"></img><br/>
-  아이디 입력창에 입력한 아이디로 person_info.xml 파일에서 같은 아이디가 없거나 다르면 경고창을 표시하고 
-  있다면 긴 문자열 형태로 가져와 SEP을 기준으로 슬라이스 하여 배열에 저장한다.
-  배열에 저장한 값 첫번째 값과 비교하여 동일하면 비밀번호를 확인한다.
-  배열에 저장한 두번째 값과 비밀번호 입력창에 입력한 비밀번호를 비교하여 다르면 경고창을 표시하고
-  같으면 로그인 처리 후 인텐트를 통해 세번째 화면으로 넘어간다.
+  1. 아이디 입력창에 입력한 아이디로 person_info.xml 파일에서 같은 아이디가 없거나 다르면 경고창을 표시한다.
+  2. 찾는 아이디있다면 긴 문자열 형태로 가져와 SEP을 기준으로 슬라이스 하여 배열에 저장한다.
+  3. 배열에 저장한 첫번째 값과 입력한 아이디를 비교하여 동일하면 비밀번호를 확인한다.
+  4. 배열에 저장한 두번째 값과 비밀번호 입력창에 입력한 비밀번호를 비교하여 다르면 경고창을 표시한다.
+  5. 같으면 로그인 처리 후 인텐트를 통해 세번째 화면으로 넘어간다.
 ### 2. 두번째 화면
 <img src="/images/Screenshot_signup.png" title="person_info" alt="person_info" width="250px"></img>
    #### 2-1. 아이디 중복 검사
