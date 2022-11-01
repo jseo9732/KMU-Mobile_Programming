@@ -92,11 +92,12 @@
 ### 3. 세번째 화면
    #### 3-1. 상품 이미지 5개 이상 표시
    <img src="/images/Screenshot_product.png" title="person_info" alt="person_info" width="250px"></img><br/>
-   ListView를 이용하여 5개의 상품 표시
+   세번째 액티비티는 TableLayout을 이용하였다.<br/>
+   또한, 상품 5가지는 ListView를 이용하여 5개의 상품 표시하였다.
+   
    <img src="/images/rowXml.png" title="person_info" alt="person_info"></img><br/>
    <img src="/images/class.png" title="person_info" alt="person_info"></img><br/>
    <img src="/images/apater.png" title="person_info" alt="person_info"></img><br/>
-   세번째 액티비티는 TableLayout을 이용하였다.<br/>
    상품 정보는 여러 View Group을 상속한 위젯 중 GridView보다는 ListView가 상품이미지와, 설명이 더 잘 보일 것이라 판단되어 ListView를 이용하였다.<br/>
    1. 세번째 액티비티에 적용할 상품정보.xml을 만든다.
    2. 리스트뷰에 필요한 정보를 추가할 수 있는 ListAdapter 클래스를 작성한다.
