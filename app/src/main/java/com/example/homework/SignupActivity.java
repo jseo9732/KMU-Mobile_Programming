@@ -1,7 +1,6 @@
 package com.example.homework;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -10,13 +9,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Toast;
-
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class SignupActivity extends AppCompatActivity {
-
-    Button signup_commit;
     private EditText mEditId;
     private Button mDupButton;
     private EditText mEditPw;
@@ -26,8 +22,9 @@ public class SignupActivity extends AppCompatActivity {
     private RadioButton mAgreeDecline;
     private RadioButton mAgreeAccept;
     private boolean isIdDup = false;
-    private boolean isValid = false;
+    private Button signup_commit;
 
+    // 유효성 검사 함수
     boolean check_validation(String password) {
         // 비밀번호 유효성 검사식 : 숫자, 특수문자가 포함되어야 한다.
         String val_symbol = "([0-9].*[!,@,#,^,&,*,(,)])|([!,@,#,^,&,*,(,)].*[0-9])";
@@ -41,6 +38,7 @@ public class SignupActivity extends AppCompatActivity {
         }
     };
 
+    // Preferences에 회원 정보 리스트로 저장
     static final String SEP = "@#!~";
     void addMember(String id, String pw, String name, String phone, String address, Boolean isAgree, SharedPreferences.Editor editor) {
         String key = id;
@@ -66,6 +64,7 @@ public class SignupActivity extends AppCompatActivity {
         SharedPreferences prefs = getSharedPreferences("person_info", Activity.MODE_PRIVATE);
         SharedPreferences.Editor editor = prefs.edit();
 
+        // 아이디 중복 확인 버튼
         mDupButton = (Button) findViewById(R.id.signup_id_isDup);
         mDupButton.setOnClickListener(v -> {
             String prefsUser = prefs.getString(mEditId.getText().toString(), "");
@@ -82,9 +81,9 @@ public class SignupActivity extends AppCompatActivity {
             }
         });
 
-        //완료 버튼
+        // 회원가입 완료 버튼
         signup_commit = (Button) findViewById(R.id.signup_commit);
-        //완료 버튼 클릭시, 로그인 페이지로 이동
+        // 회원가입 완료 버튼 클릭시, 로그인 페이지로 이동
         signup_commit.setOnClickListener(v -> {
             if (isIdDup) {
                 if (mEditPw.getText().toString().length() >= 4 && mEditPw.getText().toString().length() < 9) {
@@ -92,8 +91,8 @@ public class SignupActivity extends AppCompatActivity {
                         if (mAgreeAccept.isChecked()) {
                                 addMember(mEditId.getText().toString(), mEditPw.getText().toString(), mEditName.getText().toString(),
                                         mEditPhone.getText().toString(), mEditAddress.getText().toString(), true, editor);
-                            Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
-                            startActivity(intent);
+                                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                                startActivity(intent);
                         } else {
                             Toast.makeText(getApplicationContext(), "수집 동의하셔야 회원가입 가능합니다.", Toast.LENGTH_SHORT).show();
                         }
