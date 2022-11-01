@@ -37,6 +37,10 @@ public class LoginActivity extends AppCompatActivity {
 
         SharedPreferences.Editor editor = prefs.edit();
 
+        SharedPreferences login_prefs = getSharedPreferences("login_info", Activity.MODE_PRIVATE);
+        SharedPreferences.Editor login_editor = login_prefs.edit();
+
+
         mEditId.setText(prefsId);
 
         // 로그인 버튼
@@ -47,6 +51,9 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if(prefsId.equals(mEditId.getText().toString())) {
                     if (prefsPw.equals(mEditPw.getText().toString())) {
+                        login_editor.putBoolean("isLogin", true);
+                        login_editor.putString("loginId", mEditId.getText().toString());
+                        login_editor.apply();
                         Intent intent = new Intent(getApplicationContext(), ProductActivity.class);
                         startActivity(intent);
                     } else {
@@ -76,6 +83,9 @@ public class LoginActivity extends AppCompatActivity {
         //메인 버튼 클릭시, 상품 페이지로 이동
         product_Button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                login_editor.putBoolean("isLogin", false);
+                login_editor.remove("loginId");
+                login_editor.apply();
                 Intent intent = new Intent(getApplicationContext(), ProductActivity.class);
                 startActivity(intent);
             }

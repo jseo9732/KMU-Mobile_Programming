@@ -1,18 +1,24 @@
 package com.example.homework;
 
+import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -40,7 +46,44 @@ public class ProductActivity extends AppCompatActivity {
         MyAdapter adapter=new MyAdapter(this,mTitle,mPrice,images);
         list.setAdapter(adapter);//리스트에 어뎁터 설정
 
+        SharedPreferences login_prefs = getSharedPreferences("login_info", Activity.MODE_PRIVATE);
+        Boolean isLogin = login_prefs.getBoolean("isLogin", false);
+
+        SharedPreferences prefs = getSharedPreferences("person_info", Activity.MODE_PRIVATE);
+
         mEditSwitch = (Switch) findViewById(R.id.switch1);
+        mEditSwitch.setOnCheckedChangeListener(new Switch.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked) {
+                    if(isLogin) {
+                        Toast.makeText(getApplicationContext(), "로그인함", Toast.LENGTH_SHORT).show();
+                    } else {
+                        AlertDialog.Builder builder = new AlertDialog.Builder(ProductActivity.this);
+                        builder.setTitle("비로그인 상태입니다.");
+                        builder.setMessage("회원가입하시겠습니까?");
+                        builder.setPositiveButton("예", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                Intent intent = new Intent(getApplicationContext(), SignupActivity.class);
+                                startActivity(intent);
+                            }
+                        });
+                        builder.setNegativeButton("아니요", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                                startActivity(intent);
+                            }
+                        });
+                        builder.create().show();
+                    }
+
+                } else {
+                    Toast.makeText(getApplicationContext(), "체크 해제", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
 
 
     }
