@@ -27,6 +27,23 @@
   View Group을 상속한 위젯 ListView, GridView, AdapterView, ToolBar 등
   Text View을 상속한 CheckBox, Switch, ToggleButton, RadioButton 등
   ImageView, ImageButton 등
+  
+  
+## 개발 환경
+- Android Studio @2021.2.1
+
+## 어플리케이션 버전
+- minSdkVersion : 31
+- targetSdkVersion : 32
+- SDK Version: Android Version 12
+
+## preferences 정보 (데이터베이스를 대체하여 회원 정보 저장)
+person_info.xml: 회원가입 시 회원 정보(아이디, 비밀번호, 이름, 전화번호, 주소) 저장
+<img src="/images/person_info_screenshot.png" title="person_info" alt="person_info"></img>
+
+login_info.xml: 로그인 여부, 로그인한 아이디, 최근 로그인한 아이디를 저장
+<img src="/images/login_info_screenshot.png" title="login_info" alt="login_info"></img>
+
 
 ## 기능 소개
 ### 1. 첫번째 화면
@@ -125,21 +142,6 @@
    3. 회원가입할지 여부를 묻는다.
    4. "예"를 선택하면 인텐트를 통해 회원가입 액티비티로 넘어간다.
    5. "아니요"를 선택하면 인텐트를 통해 로그인 액티비티로 넘어간다.
-
-## 개발 환경
-- Android Studio @2021.2.1
-
-## 어플리케이션 버전
-- minSdkVersion : 31
-- targetSdkVersion : 32
-- SDK Version: Android Version 12
-
-## preferences 정보 (데이터베이스를 대체하여 회원 정보 저장)
-person_info.xml: 회원가입 시 회원 정보(아이디, 비밀번호, 이름, 전화번호, 주소) 저장
-<img src="/images/person_info_screenshot.png" title="person_info" alt="person_info"></img>
-
-login_info.xml: 로그인 여부, 로그인한 아이디, 최근 로그인한 아이디를 저장
-<img src="/images/login_info_screenshot.png" title="login_info" alt="login_info"></img>
 
 ## 참고 블로그
 ### ListView 참고
