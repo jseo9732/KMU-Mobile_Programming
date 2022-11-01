@@ -54,13 +54,13 @@
   2. 메인 버튼을 누르면 login_info.xml 파일에 로그인 상태를 false로 저장하고 로그인한 아이디 정보를 삭제한 뒤 세번째 페이지로 이동한다.
 
 ### 2. 두번째 화면
-<img src="/images/Screenshot_signup.png" title="person_info" alt="person_info" width="250px"></img>
+<img src="/images/Screenshot_signup.png" title="person_info" alt="person_info" width="250px"></img><br/>
 첫번째 액티비티는 LinearLayout 이용하였다.
    #### 2-1. 아이디 중복 검사
    <img src="/images/Screenshot_id_check.png" title="person_info" alt="person_info" width="250px"></img>
    <img src="/images/Screenshot_id_dup.png" title="person_info" alt="person_info" width="250px"></img><br/>
    사용 중인 아이디와 사용 가능한 아이디 중복 확인 시 경고 표시
-   <img src="/images/2022-11-01_10.06.50.png" title="person_info" alt="person_info" width="250px"></img><br/>
+   <img src="/images/2022-11-01_10.06.50.png" title="person_info" alt="person_info"></img><br/>
    1. 아이디에 입력한 값이 없다면 아이디를 입력해달라는 경고창을 표시하고 isIdDup 변수를 false로 유지한다.
    2. person_info.xml 파일에서 회원가입할 아이디와 동일한 프레퍼런스가 있다면 사용중인 아이디라는 경고창을 토스트를 통해 표시하고 isIdDup 변수를 false로 유지한다.
    3. person_info.xml 파일에 회원가입할 아이디와 동일한 프레퍼런스가 없다면 사용가능한 아이디라는 경고창을 표시하고 isIdDup 변수를 true로 변경하여 회원가입이 가능하도록한다.
@@ -93,8 +93,8 @@
    <img src="/images/rowXml.png" title="person_info" alt="person_info"></img><br/>
    <img src="/images/class.png" title="person_info" alt="person_info"></img><br/>
    <img src="/images/apater.png" title="person_info" alt="person_info"></img><br/>
-   세번째 액티비티는 TableLayout을 이용하였다.
-   상품 정보는 여러 View Group을 상속한 위젯 중 GridView보다는 ListView가 상품이미지와, 설명이 더 잘 보일 것이라 판단되어 ListView를 이용하였다.
+   세번째 액티비티는 TableLayout을 이용하였다.<br/>
+   상품 정보는 여러 View Group을 상속한 위젯 중 GridView보다는 ListView가 상품이미지와, 설명이 더 잘 보일 것이라 판단되어 ListView를 이용하였다.<br/>
    1. 세번째 액티비티에 적용할 상품정보.xml을 만든다.
    2. 리스트뷰에 필요한 정보를 추가할 수 있는 ListAdapter 클래스를 작성한다.
    3. 위에서 작성한 클래스를 이용하여 리스트뷰에 필요한 정보를 적용시킨다.
