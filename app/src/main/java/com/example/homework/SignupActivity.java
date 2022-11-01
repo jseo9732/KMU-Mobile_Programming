@@ -38,7 +38,7 @@ public class SignupActivity extends AppCompatActivity {
         }
     };
 
-    // Preferences에 회원 정보 리스트로 저장
+    // Preferences에 회원 정보 회원 정보를 담은 긴 문자열로 저장
     static final String SEP = "@#!~";
     void addMember(String id, String pw, String name, String phone, String address, Boolean isAgree, SharedPreferences.Editor editor) {
         String key = id;

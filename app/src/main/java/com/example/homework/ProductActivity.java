@@ -62,7 +62,8 @@ public class ProductActivity extends AppCompatActivity {
                         String[] saveData = logUserUser.split(SEP);
                         AlertDialog.Builder builderUser = new AlertDialog.Builder(ProductActivity.this);
                         builderUser.setTitle("회원 정보 조회");
-                        builderUser.setMessage("ID: " + saveData[0] + "\n" + "이름: " + saveData[2] + "\n" + "전화번호: " + saveData[3] + "\n" + "주소: " + saveData[4]);
+                        builderUser.setMessage("ID: " + saveData[0] + "\n" + "이름: " + saveData[2] +
+                                                "\n" + "전화번호: " + saveData[3] + "\n" + "주소: " + saveData[4]);
                         builderUser.setPositiveButton("확인", null);
                         builderUser.create().show();
                     } else {
