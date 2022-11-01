@@ -32,6 +32,7 @@
 ### 1. 첫번째 화면
   #### 1-1. 앱 접속 페이지, 회원 ID/비밀번호(EditView), 로그인/회원가입(Button)
   <img src="/images/Screenshot_login.png" title="person_info" alt="person_info" width="250px"></img> <br/>
+  첫번째 액티비티는 RelativeLayout 이용하였다.
   #### 1-2. 첫번째 화면 초기화시에 기존에 저장된 개인정보 읽어 오기
   <img src="/images/Screenshot_20221101_212049.png" title="person_info" alt="person_info" width="250px"></img> <br/>
   마지막으로 로그인한 아이디를 자동으로 입력<br/>  
@@ -44,7 +45,7 @@
   (왼)아이디 오류 시 경고 메세지 (오)비밀번호 오류 시 경고 메세지<br/>
   <img src="/images/2022-11-01_9.54.18.png" title="person_info" alt="person_info"></img><br/>
   1. 아이디 입력창에 입력한 아이디로 person_info.xml 파일에서 같은 아이디가 없거나 다르면 경고창을 표시한다.
-  2. 찾는 아이디있다면 긴 문자열 형태로 가져와 SEP을 기준으로 슬라이스 하여 배열에 저장한다.
+  2. 찾는 아이디있다면 긴 문자열 형태로 가져와 SEP을 기준으로 split()하여 배열에 저장한다.
   3. 배열에 저장한 첫번째 값과 입력한 아이디를 비교하여 동일하면 비밀번호를 확인한다.
   4. 배열에 저장한 두번째 값과 비밀번호 입력창에 입력한 비밀번호를 비교하여 다르면 경고창을 표시한다.
   5. 같으면 로그인 처리 후 인텐트를 통해 세번째 화면으로 넘어간다.
@@ -54,6 +55,7 @@
 
 ### 2. 두번째 화면
 <img src="/images/Screenshot_signup.png" title="person_info" alt="person_info" width="250px"></img>
+첫번째 액티비티는 LinearLayout 이용하였다.
    #### 2-1. 아이디 중복 검사
    <img src="/images/Screenshot_id_check.png" title="person_info" alt="person_info" width="250px"></img>
    <img src="/images/Screenshot_id_dup.png" title="person_info" alt="person_info" width="250px"></img><br/>
@@ -88,14 +90,37 @@
    #### 3-1. 상품 이미지 5개 이상 표시
    <img src="/images/Screenshot_product.png" title="person_info" alt="person_info" width="250px"></img><br/>
    ListView를 이용하여 5개의 상품 표시
+   <img src="/images/rowXml.png" title="person_info" alt="person_info"></img><br/>
+   <img src="/images/class.png" title="person_info" alt="person_info"></img><br/>
+   <img src="/images/apater.png" title="person_info" alt="person_info"></img><br/>
+   세번째 액티비티는 TableLayout을 이용하였다.
+   상품 정보는 여러 View Group을 상속한 위젯 중 GridView보다는 ListView가 상품이미지와, 설명이 더 잘 보일 것이라 판단되어 ListView를 이용하였다.
+   1. 세번째 액티비티에 적용할 상품정보.xml을 만든다.
+   2. 리스트뷰에 필요한 정보를 추가할 수 있는 ListAdapter 클래스를 작성한다.
+   3. 위에서 작성한 클래스를 이용하여 리스트뷰에 필요한 정보를 적용시킨다.
 
    #### 3-2. 회원인 경우는 가입한 회원 정보 표시
    <img src="/images/Screenshot_userInfo.png" title="person_info" alt="person_info" width="250px"></img><br/>
+   로그인한 회원일 경우 비밀번호를 제외한 회원의 정보를 보여준다.
+   <img src="/images/login.png" title="person_info" alt="person_info"></img><br/>
+   1. 먼저 스위치를 체크했는지 확인한다.
+   2. login_info.xml에 저장되어있는 파일을 통해 로그인 여부를 판단한다.
+   3. 로그인이 되어있다면 login_info.xml에 저장되어있는 로그인한 아이디를 get()하여 person_info.xml에서 관련 정보를 조회한다.
+   4. person_info.xml에서 조회한 긴 문자열을 logUserUser 변수에 저장한다.
+   5. logUserUser에 저장한 문자열을 SEP을 기준으로 split()하여 saveData에 저장한다.
+   6. AlertDialog.Builder를 이용하여 회원 정보를 조회할 수 있는 AlertDialog를 만든다.
+
 
    #### 3-3. 비회원인 경우 회원가입 여부 묻기
    <img src="/images/Screenshot_onLogin.png" title="person_info" alt="person_info" width="250px"></img><br/>
    "예" 클릭 시 회원 가입 페이지로 이동
    "아니오" 클릭 시 로그인 페이지로 이동
+   <img src="/images/nologin.png" title="person_info" alt="person_info"></img><br/>
+   1. 스위치를 체크했지만 로그인 하지 않았을 경우
+   2. 위와 동일하게 AlertDialog.Builder를 생성하지만 예, 아니오를 둘 다 만들어 준다.
+   3. 회원가입할지 여부를 묻는다.
+   4. "예"를 선택하면 인텐트를 통해 회원가입 액티비티로 넘어간다.
+   5. "아니요"를 선택하면 인텐트를 통해 로그인 액티비티로 넘어간다.
 
 ## 개발 환경
 - Android Studio @2021.2.1
@@ -106,8 +131,24 @@
 - SDK Version: Android Version 12
 
 ## preferences 정보 (데이터베이스를 대체하여 회원 정보 저장)
-person_info: 회원가입 시 회원 정보(아이디, 비밀번호, 이름, 전화번호, 주소) 저장
+person_info.xml: 회원가입 시 회원 정보(아이디, 비밀번호, 이름, 전화번호, 주소) 저장
 <img src="/images/person_info_screenshot.png" title="person_info" alt="person_info"></img>
 
-login_info: 로그인 여부, 로그인한 아이디, 최근 로그인한 아이디를 저장
+login_info.xml: 로그인 여부, 로그인한 아이디, 최근 로그인한 아이디를 저장
 <img src="/images/login_info_screenshot.png" title="login_info" alt="login_info"></img>
+
+## 참고 블로그
+### ListView 참고
+https://cpcp127.tistory.com/8
+
+### Switch 참고
+https://aries574.tistory.com/85
+
+### AlertDialog 참고
+https://baessi.tistory.com/60
+
+### 프레퍼런스 데이터 저장 참고
+https://win-record.tistory.com/29
+
+### 유효성 검사 참고
+https://blog.naver.com/PostView.nhn?blogId=eo930827&logNo=221608438189&parentCategoryNo=&categoryNo=22&viewDate=&isShowPopularPosts=true&from=search
