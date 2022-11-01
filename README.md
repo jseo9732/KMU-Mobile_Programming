@@ -31,7 +31,7 @@
 ## 기능 소개
 1. 첫번째 화면 (Relative Layout 혹은 Fragment 사용) - 5점 <br/>
   1-1. 앱 접속 페이지, 회원 ID/비밀번호(EditView), 로그인/회원가입(Button) <br/>
-       <img src="/images/Screenshot_login.png" title="person_info" alt="person_info" width="300px"></img> <br/>
+       <img src="/images/Screenshot_login.png" title="person_info" alt="person_info" width="200px"></img> <br/>
   1-2. 첫번째 화면 초기화시에 기존에 저장된 개인정보 읽어 오기
        <img src="/images/Screenshot_20221101_212049.png" title="person_info" alt="person_info"></img>
        마지막으로 로그인한 아이디를 자동으로 입력
