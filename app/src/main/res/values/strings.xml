@@ -3,7 +3,7 @@
     <string name="login">로그인</string>
     <string name="login_login_btn">로그인</string>
     <string name="login_signup_btn">회원가입</string>
-    <string name="login_main_btn">메인으로</string>
+    <string name="login_main_btn">메인 버튼</string>
 
     <string name="signup_id">id</string>
     <string name="signup_id_isDup">중복 확인</string>

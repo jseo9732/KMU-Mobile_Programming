@@ -97,7 +97,7 @@ public class SignupActivity extends AppCompatActivity {
                             Toast.makeText(getApplicationContext(), "수집 동의하셔야 회원가입 가능합니다.", Toast.LENGTH_SHORT).show();
                         }
                     } else {
-                        Toast.makeText(getApplicationContext(), "유효하지 않은 비밀번호입니다.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "숫자와 특수문자가 포함되어야 합니다.", Toast.LENGTH_SHORT).show();
                     }
                 } else {
                     Toast.makeText(getApplicationContext(), "비밀번호는 4~8글자만 가능합니다.", Toast.LENGTH_SHORT).show();
