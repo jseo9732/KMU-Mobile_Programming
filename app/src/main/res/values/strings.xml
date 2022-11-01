@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Homework</string>
+    <string name="login">로그인</string>
+    <string name="login_login_btn">로그인</string>
+    <string name="login_signup_btn">회원가입</string>
+    <string name="login_main_btn">메인으로</string>
+
+    <string name="signup_id">id</string>
+    <string name="signup_id_isDup">중복 확인</string>
+    <string name="signup_pw">비밀번호</string>
+    <string name="signup_pw_check">비밀번호 확인</string>
+    <string name="signup_name">이름</string>
+    <string name="signup_phone">전화번호</string>
+    <string name="signup_address">주소</string>
+    <string name="signup_agree_text">개인 정보 수집 동의</string>
+    <string name="signup_agree_content">이름, 전화번호, 주소를 수집합니다.</string>
+    <string name="signup_agree_decline">거부</string>
+    <string name="signup_agree_accept">승인</string>
+    <string name="signup_commit">완료</string>
+    <string name="signup_id_input">아이디</string>
+    <string name="signup_id_dup">중복 확인</string>
+</resources>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="50dp"
+    tools:context=".SignupActivity">
+
+    <TextView
+        android:id="@+id/login_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="170dp"
+        android:layout_marginTop="50dp"
+        android:text="@string/login"
+        android:textSize="50sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/login_id_input"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="190dp"
+        android:ems="10"
+        android:hint="아이디"
+        android:inputType="text"
+        android:text=""
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/login_pw_input"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="240dp"
+        android:ems="10"
+        android:hint="비밀번호"
+        android:inputType="textPassword"
+        android:text=""
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/login_Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_above="@id/signup_Button"
+        android:text="@string/login_login_btn" />
+
+    <Button
+        android:id="@+id/signup_Button"
+        android:layout_width="320dp"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_above="@id/product_Button"
+        android:layout_marginStart="-4dp"
+        android:text="@string/login_signup_btn" />
+
+    <Button
+        android:id="@+id/product_Button"
+        android:layout_width="320dp"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="0dp"
+        android:text="@string/login_main_btn" />
+
+</RelativeLayout>

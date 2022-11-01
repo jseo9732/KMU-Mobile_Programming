@@ -1,0 +1,80 @@
+package com.example.homework;
+
+import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.ListView;
+import android.widget.Switch;
+import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class ProductActivity extends AppCompatActivity {
+
+    private ListView list;
+    String mTitle[] = {"농심 신라면 120g", "농심 신라면 건면 97g", "오뚜기 진라면 순한맛 120g", "오뚜기 참깨라면 115g", "오뚜기 김치라면 120g"};
+    String mPrice[] = {"1100원", "1300원", "900원", "1500원", "1200원"};
+    int images[]={R.drawable.sin,R.drawable.singun,R.drawable.ginsun,R.drawable.sam,R.drawable.kimchi};
+    private Switch mEditSwitch;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_product);
+        setTitle("상품 정보");
+
+        list=(ListView)findViewById(R.id.list);
+
+        MyAdapter adapter=new MyAdapter(this,mTitle,mPrice,images);
+        list.setAdapter(adapter);//리스트에 어뎁터 설정
+
+        mEditSwitch = (Switch) findViewById(R.id.switch1);
+
+
+    }
+
+    class MyAdapter extends ArrayAdapter<String>{
+        Context context;
+        String rTitle[];
+        String rPrice[];
+        int rImgs[];
+
+        MyAdapter(Context c, String title[],String price[],int imgs[]){
+            super(c,R.layout.list_view_row,R.id.textView1,title);
+            this.context=c;
+            this.rTitle=title;
+            this.rPrice=price;
+            this.rImgs=imgs;
+        }
+
+        @NonNull
+        @Override
+        public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+            LayoutInflater layoutInflater=(LayoutInflater)getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            View list_view_row=layoutInflater.inflate(R.layout.list_view_row,parent,false);
+
+            ImageView images=list_view_row.findViewById(R.id.image);
+            TextView myTitle=list_view_row.findViewById(R.id.textView1);
+            TextView myDescription=list_view_row.findViewById(R.id.textView2);
+
+            images.setImageResource(rImgs[position]);
+            myTitle.setText(rTitle[position]);
+            myDescription.setText(rPrice[position]);
+
+
+            return list_view_row;//앞에서 만든 xml 파일
+        }
+    }
+}
