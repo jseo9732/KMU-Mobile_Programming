@@ -49,14 +49,17 @@
   3. 배열에 저장한 첫번째 값과 입력한 아이디를 비교하여 동일하면 비밀번호를 확인한다.
   4. 배열에 저장한 두번째 값과 비밀번호 입력창에 입력한 비밀번호를 비교하여 다르면 경고창을 표시한다.
   5. 같으면 로그인 처리 후 인텐트를 통해 세번째 화면으로 넘어간다.
+  
   <img src="/images/2022-11-01_10.03.42.png" title="person_info" alt="person_info"></img><br/>
   1. 회원가입 버튼을 누르면 인텐트를 통해 회원가입 페이지로 넘어간다.
   2. 메인 버튼을 누르면 login_info.xml 파일에 로그인 상태를 false로 저장하고 로그인한 아이디 정보를 삭제한 뒤 세번째 페이지로 이동한다.
 
 ### 2. 두번째 화면
-<img src="/images/Screenshot_signup.png" title="person_info" alt="person_info" width="250px"></img><br/>
-첫번째 액티비티는 LinearLayout 이용하였다.
-   #### 2-1. 아이디 중복 검사
+   #### 2-1. 회원가입 페이지, 첫번째 페이지에서 회원가입 버튼 클릭 시 출력
+   <img src="/images/Screenshot_signup.png" title="person_info" alt="person_info" width="250px"></img><br/>
+   첫번째 액티비티는 LinearLayout 이용하였다.
+   
+   #### 2-2. 아이디 중복 검사
    <img src="/images/Screenshot_id_check.png" title="person_info" alt="person_info" width="250px"></img>
    <img src="/images/Screenshot_id_dup.png" title="person_info" alt="person_info" width="250px"></img><br/>
    사용 중인 아이디와 사용 가능한 아이디 중복 확인 시 경고 표시
@@ -65,7 +68,7 @@
    2. person_info.xml 파일에서 회원가입할 아이디와 동일한 프레퍼런스가 있다면 사용중인 아이디라는 경고창을 토스트를 통해 표시하고 isIdDup 변수를 false로 유지한다.
    3. person_info.xml 파일에 회원가입할 아이디와 동일한 프레퍼런스가 없다면 사용가능한 아이디라는 경고창을 표시하고 isIdDup 변수를 true로 변경하여 회원가입이 가능하도록한다.
 
-   #### 2-2. 비밀번호 유효성 검사 (4~8글자 제한, 숫자와 특수문자 필수 포함)
+   #### 2-3. 비밀번호 유효성 검사 (4~8글자 제한, 숫자와 특수문자 필수 포함)
    <img src="/images/Screenshot_pw_length.png" title="person_info" alt="person_info" width="250px"></img>
    <img src="/images/Screenshot_pw_vaild.png" title="person_info" alt="person_info" width="250px"></img><br/>
    4~8글자 제한과 숫자와 특수문자 필수 포함이 아니면 경고 표시
@@ -74,7 +77,7 @@
    정규표현식을 사용하여 숫자와 특수문자가 포함되어있는지 확인 후 Boolean값을 반환한다.
    글자 수는 회원가입 버튼 클릭시 확인한다.
    
-   #### 2-3. 개인정보 수집 동의
+   #### 2-4. 개인정보 수집 동의
    <img src="/images/Screenshot_nop.png" title="person_info" alt="person_info" width="250px"></img><br/>
    개인정보 수집 비동의 시 경고창 표시
    <img src="/images/2022-11-01_10.14.53.png" title="person_info" alt="person_info"></img><br/>
